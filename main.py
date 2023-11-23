@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import json
 import os
 import random
-from requests import post, get
+from requests import get, post, exceptions
 
 #load variables stored in .env file
 load_dotenv()
@@ -24,10 +24,14 @@ def get_token():
         "Content-Type" : "application/x-www-form-urlencoded"
     }
     data = {"grant_type": "client_credentials"}
-    result = post(url, headers = headers, data = data)
-    json_result = json.loads(result.content)
-    token = json_result["access_token"]
-    return token
+    try:
+        result = post(url, headers = headers, data = data, timeout=10)
+        json_result = json.loads(result.content)
+        token = json_result["access_token"]
+        return token
+    except exceptions.Timeout:
+        print("Timed out. Server did not respond.")
+        return None
 
 def get_auth_header(token):
     return {"Authorization": "Bearer " + token}
@@ -43,7 +47,12 @@ def search_for_track(token, artist_name=None, song_name=None):
     query = f"?q={artist_name, song_name}&type=track&limit=1"
     
     query_url = url + query
-    result = get(query_url, headers = headers)
+
+    try:
+        result = get(query_url, headers = headers, timeout=10)
+    except exceptions.Timeout:
+        print("Timed out. Server did not respond.")
+        
     json_result = json.loads(result.content)
     output_url = json_result['tracks']['items'][0]['external_urls']['spotify']
     
@@ -92,26 +101,26 @@ def parse_song(response):
             for i in range(len(sent)):
                 if sent[i][0] == '"':
                     song_start = i
-                pass
+                    pass
                 if sent[i][-1] == '"':
                     song_end = i
-                pass
+                    pass
                 if sent[i] == "by":
                     artist_start = i+1
-                pass
+                    pass
                 if sent[i] == "-":
                     artist_end = i -1
-                pass
+                    pass
         if song_start != None and song_end != None:
             song_name = " ".join(sent[song_start:song_end+1])[1:-1]
-        pass
+            pass
         if artist_start != None and artist_end != None:
             artist_name = " ".join(sent[artist_start:artist_end+1])
-        pass
+            pass
         if song_name != None or artist_name != None:
             song_artist = (song_name, artist_name)
             song_artist_l.append(song_artist)
-        pass
+            pass
     if len(song_artist_l) == 0:
         return (None, None)
     else:
