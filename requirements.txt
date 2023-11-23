@@ -6,7 +6,5 @@ pytest
 pytest-cov
 
 # web app
-base64
-json
 python-dotenv
 requests
