@@ -101,26 +101,19 @@ def parse_song(response):
             for i in range(len(sent)):
                 if sent[i][0] == '"':
                     song_start = i
-                    pass
                 if sent[i][-1] == '"':
                     song_end = i
-                    pass
                 if sent[i] == "by":
                     artist_start = i+1
-                    pass
                 if sent[i] == "-":
                     artist_end = i -1
-                    pass
         if song_start != None and song_end != None:
             song_name = " ".join(sent[song_start:song_end+1])[1:-1]
-            pass
         if artist_start != None and artist_end != None:
             artist_name = " ".join(sent[artist_start:artist_end+1])
-            pass
         if song_name != None or artist_name != None:
             song_artist = (song_name, artist_name)
             song_artist_l.append(song_artist)
-            pass
     if len(song_artist_l) == 0:
         return (None, None)
     else:
