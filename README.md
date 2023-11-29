@@ -1,3 +1,5 @@
+[![Python Continuous Integration with Github Actions](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml/badge.svg)](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml)
+
 # Using Voice Prompt for Song Recommendation
 
 This repository contains codes for deploying a voice-triggered song recommendation application (app). Ｗhen using the app, the user can **talk** about their feelings or conditions at moment, such as "I am waiting for my plane" or " I am feeing down today", and a song will be recommended and played on spotify.
