@@ -2,7 +2,9 @@
 
 # Using Voice Prompt for Song Recommendation
 
-This repository contains codes for deploying a voice-triggered song recommendation application (app). Ｗhen using the app, the user can **talk** about their feelings or conditions at moment, such as "I am waiting for my plane" or " I am feeing down today", and a song will be recommended and played on spotify.
+This repository contains codes for deploying a voice-triggered song recommendation application (app). Ｗhen using the app, the user can **talk** about their feelings or conditions at moment, such as "I am waiting for my plane" or " I am feeing down today", and a song will be recommended and played on spotify. The user can also use the pull down
+
+This is a collective project with the following contibutors: Jiwon Shin, halfmoonliu
 
 The Following are an over view of the project:
 
