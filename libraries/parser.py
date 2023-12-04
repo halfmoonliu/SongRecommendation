@@ -1,4 +1,5 @@
 import random
+from libraries.query import query_song
 
 def parse_song(response):
     '''
@@ -31,9 +32,8 @@ def parse_song(response):
         if song_name != None or artist_name != None:
             song_artist = (song_name, artist_name)
             song_artist_l.append(song_artist)
-    print(song_artist_l)
     if len(song_artist_l) == 0:
-        return (None, None)
+        return query_song()
     else:
         return random.choice(song_artist_l)
     

@@ -6,6 +6,13 @@ import sqlite3
 # Now you can run queries like this:
 
 def query_song(m=None):    
+    '''
+    This function takes in a "mood" as input and
+    query the music database and
+    returns a song name and artist name 
+    input: a string of mood (e.g. "Chill")
+    output: a tuple of (song name, artist name), both are strings
+    '''
     conn = sqlite3.connect("music.db")
     cursor = conn.cursor()   
     if m != None:
