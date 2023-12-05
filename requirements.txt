@@ -8,3 +8,4 @@ pytest-cov
 # web app
 python-dotenv
 requests
+openai
