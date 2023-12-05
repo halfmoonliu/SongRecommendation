@@ -4,8 +4,12 @@ click
 pylint
 pytest
 pytest-cov
+pyaudio
 
 # web app
 python-dotenv
 requests
+<<<<<<< HEAD
 openai
+=======
+>>>>>>> 1336f6d185881998e4d3d2dc612c7a2695440220
