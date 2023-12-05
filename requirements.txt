@@ -4,6 +4,7 @@ click
 pylint
 pytest
 pytest-cov
+pyaudio
 
 # web app
 python-dotenv
