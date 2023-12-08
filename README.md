@@ -12,7 +12,7 @@ Below is a **walkthrough** of the App.
 Project structural diagram:
 
 
-Files in the directory:
+Files in the repo:
 
 1. Main Functions associated libraries .
   <br>a. _main.py_: the main function for the
