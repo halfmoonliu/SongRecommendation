@@ -34,4 +34,4 @@ Files in the repo:
 5. **Description of the project**
    <br>f. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
 
-This is a collective project with the following contibutors: @afraa-n (Afraa Noureen), @BobZhang26 (Bob Zhang), @jiwonny29 (Jiwon Shin), and @halfmoonliu (Yun-Chung (Murphy) Liu).
+This is a collective project with the following contibutors: Afraa Noureen(@afraa-n), Bob Zhang(@BobZhang26), Jiwon Shin(@jiwonny29),Yun-Chung (Murphy) Liu (@halfmoonliu).
