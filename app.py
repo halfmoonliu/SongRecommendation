@@ -1,5 +1,5 @@
 """
-Main Script
+App Script
 
 This script defines our Streamlit app, 'JAMB-O', a mood-based music recommendation app. It allows users to 
 either record their voice to generate a song recommendation using GPT-3 or choose a mood from a dropdown 
