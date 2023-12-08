@@ -23,16 +23,15 @@ Files:
       <br>iv.  _spotifyFunc.py_: takes a **song name** and an **artist name** and feed them to **Spotify API** and output **spotify soundtrack playing URL**.
       <br>v.  _songDB.py_: contains functions for **building a song database** and **querying song names and artist names** based on **user input mood**.
 
-
 3. **Github actions setup for continuous integration**
-  <br>b. _.github/workflows/main.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
+      <br>c. _.github/workflows/main.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
 
 4. **Other files for development environment settings**
   
-      <br>c. _.gitignore_: specify file names to ignore.
-      <br>d. _requirements.txt_: list required packages for the project.
+      <br>d. _.gitignore_: specify file names to ignore.
+      <br>e. _requirements.txt_: list required packages for the project.
 
 5. **Description of the project**
-   <br>e. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
+   <br>f. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
 
 This is a collective project with the following contibutors: @jiwonny29 (Jiwon Shin), @halfmoonliu (Yun-Chung Liu)
