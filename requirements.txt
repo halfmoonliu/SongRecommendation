@@ -16,7 +16,6 @@ databricks-sql-connector
 streamlit
 spotipy
 pydub
-wave
 pyaudio
 whisper
 scipy
@@ -24,5 +23,5 @@ numpy
 openai
 python-dotenv
 requests
-sqlite3
+#sqlite3
 loguru
