@@ -128,7 +128,7 @@ if option_choice == "Tell us how you feel!":
                     unsafe_allow_html=True,
                 )
             else:
-                logger.warning("Song not found on Spotify. Fallback to DB for Option 1.")
+                logger.warning("Spotify track not found. Fallback to DB for Option 1.")
                 song_name_db, artist_name_db = query_song(song_recommendation)
                 spotify_url_db = search_for_track(token, artist_name_db, song_name_db)
 
@@ -137,8 +137,8 @@ if option_choice == "Tell us how you feel!":
                     st.markdown(
                         f'<iframe src="https://open.spotify.com/embed/track/'
                         f'{spotify_url_db.split("/")[-1]}" width="300" height="80" '
-                        f'frameborder="0" allowtransparency="true" allow="encrypted-media">'
-                        '</iframe>',
+                        f'frameborder="0" allowtransparency="true" '
+                        f'allow="encrypted-media"></iframe>',
                         unsafe_allow_html=True,
                     )
                 else:
