@@ -1,7 +1,7 @@
 install:
+	brew install portaudio
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
-	brew install portaudio
 
 #test:
 	#python -m pytest -vv test_*.py #--cov=main --cov=mylib
