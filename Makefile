@@ -1,5 +1,5 @@
 install:
-	brew install portaudio
+	sudo apt-get install -y portaudio19-dev
 	pip install --upgrade pip && pip install -r requirements.txt
 
 test:
