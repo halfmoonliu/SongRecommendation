@@ -121,9 +121,12 @@ if option_choice == "Tell us how you feel!":
             if spotify_url_gpt:
                 logger.info("Spotify track found for GPT recommendation.")
                 st.markdown(
-                    f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_gpt.split("/")[-1]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                    f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_gpt.split("/")[-1]}" '
+                    'width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">'
+                    '</iframe>',
                     unsafe_allow_html=True,
                 )
+
             else:
                 logger.warning("Song not found on Spotify. Fallback to DB for Option 1.")
                 song_name_db, artist_name_db = query_song(song_recommendation)
@@ -132,7 +135,9 @@ if option_choice == "Tell us how you feel!":
                 if spotify_url_db:
                     logger.info("Spotify track found in the database for Option 1.")
                     st.markdown(
-                        f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_db.split("/")[-1]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                        f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_db.split("/")[-1]}" '
+                        'width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">'
+                        '</iframe>',
                         unsafe_allow_html=True,
                     )
                 else:
@@ -158,7 +163,9 @@ elif option_choice == "Choose your mood!":
         if spotify_url_mood:
             logger.info("Spotify track found for mood.")
             st.markdown(
-                f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_mood.split("/")[-1]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_mood.split("/")[-1]}" '
+                'width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">'
+                '</iframe>',
                 unsafe_allow_html=True,
             )
         else:
