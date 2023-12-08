@@ -23,9 +23,6 @@ scipy
 numpy
 openai
 python-dotenv
-base64
-json
-os
 requests
 sqlite3
 loguru
