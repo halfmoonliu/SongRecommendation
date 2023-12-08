@@ -21,7 +21,8 @@ Files in the repo:
       <br>ii.  _GPR_prompt.py_: uses transfomed user input to **prompt chat GPT** and **returns song recommendations received**.
       <br>iii. _parser.py_: output **one song name** and the corresponding **artist name** by parsing chat GPT's response.
       <br>iv.  _spotifyFunc.py_: takes a **song name** and an **artist name** and feed them to **Spotify API** and output **spotify soundtrack playing URL**.
-      <br>v.  _songDB.py_: contains functions for **building a song database** and **querying song names and artist names** based on **user input mood**.
+      <br>v.  _songDB.py_: contains functions for **building a song database**.
+      <br>vi. _query.py__: **querying song names and artist names** based on **user input mood**.
 
 3. **Github actions setup for continuous integration**
       <br>c. _.github/workflows/main.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
