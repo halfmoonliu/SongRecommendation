@@ -118,14 +118,14 @@ if option_choice == "Tell us how you feel!":
             st.write(f"Now Playing: {song_name_gpt} by {artist_name_gpt}")
             spotify_url_gpt = search_for_track(token, artist_name_gpt, song_name_gpt)
 
-            if spotify_url_gpt:
-                logger.info("Spotify track found for GPT recommendation.")
-                st.markdown(
-                    f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_gpt.split("/")[-1]}" '
-                    'width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">'
-                    '</iframe>',
-                    unsafe_allow_html=True,
-                )
+        if spotify_url_gpt:
+            logger.info("Spotify track found for GPT recommendation.")
+            st.markdown(
+                f'<iframe src="https://open.spotify.com/embed/track/'
+                f'{spotify_url_gpt.split("/")[-1]}" width="300" height="80" '
+                f'frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                unsafe_allow_html=True,
+            )
 
             else:
                 logger.warning("Song not found on Spotify. Fallback to DB for Option 1.")
