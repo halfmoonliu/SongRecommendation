@@ -27,7 +27,6 @@ Files:
       <br>c. _.github/workflows/main.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
 
 4. **Other files for development environment settings**
-  
       <br>d. _.gitignore_: specify file names to ignore.
       <br>e. _requirements.txt_: list required packages for the project.
 
