@@ -29,8 +29,8 @@ Files:
 
 4. **Other files for development environment settings**
   
-  <br>c. _.gitignore_: specify file names to ignore.
-  <br>d. _requirements.txt_: list required packages for the project.
+      <br>c. _.gitignore_: specify file names to ignore.
+      <br>d. _requirements.txt_: list required packages for the project.
 
 5. **Description of the project**
    <br>e. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
