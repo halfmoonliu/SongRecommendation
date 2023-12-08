@@ -1,10 +1,11 @@
 """
 App Script
 
-This script defines our Streamlit app, 'JAMB-O', a mood-based music recommendation app. It allows users to 
-either record their voice to generate a song recommendation using GPT-3 or choose a mood from a dropdown 
-to get a song recommendation based on their mood. The script integrates with the Spotify API for music 
-playback and uses various modules for speech-to-text, natural language processing, and database queries.
+This script defines our Streamlit app, 'JAMB-O', a mood-based music recommendation app. 
+It allows users to either record their voice to generate a song recommendation using 
+GPT-3 or choose a mood from a dropdown to get a song recommendation based on their 
+mood. The script integrates with the Spotify API for music playback and uses various 
+modules for speech-to-text, natural language processing, and database queries.
 
 Authors: Bob Zhang, Jiwon Shin, Yun-Chung Liu (Murphy), Afraa Noureen 
 """
@@ -21,7 +22,12 @@ from libraries._04_query import query_song
 from libraries._05_parser import parse_song
 
 # Configure Loguru logger
-log_format = "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+log_format = (
+    "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | "
+    "<level>{level: <8}</level> | "
+    "<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - "
+    "<level>{message}</level>"
+)
 logger.add("logging.md", format=log_format, level="INFO")
 
 # Load environment variables from .env file
