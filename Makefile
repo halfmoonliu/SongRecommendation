@@ -1,4 +1,5 @@
 install:
+	brew install portaudio
 	pip install --upgrade pip && pip install -r requirements.txt
 
 test:
