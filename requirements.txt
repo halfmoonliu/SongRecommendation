@@ -23,5 +23,4 @@ numpy
 openai
 python-dotenv
 requests
-#sqlite3
 loguru
