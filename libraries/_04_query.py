@@ -17,7 +17,7 @@ def query_song(m=None):
     Returns:
     tuple or None: A tuple containing the song name and artist name if a match is found, otherwise None.
     """
-    conn = sqlite3.connect("music.db")
+    conn = sqlite3.connect("songs.db")
     cursor = conn.cursor()
     if m != None:
         cursor.execute(
