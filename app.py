@@ -1,10 +1,11 @@
 """
 App Script
 
-This script defines our Streamlit app, 'JAMB-O', a mood-based music recommendation app. It allows users to 
-either record their voice to generate a song recommendation using GPT-3 or choose a mood from a dropdown 
-to get a song recommendation based on their mood. The script integrates with the Spotify API for music 
-playback and uses various modules for speech-to-text, natural language processing, and database queries.
+This script defines our Streamlit app, 'JAMB-O', a mood-based music recommendation app. 
+It allows users to either record their voice to generate a song recommendation using 
+GPT-3 or choose a mood from a dropdown to get a song recommendation based on their 
+mood. The script integrates with the Spotify API for music playback and uses various 
+modules for speech-to-text, natural language processing, and database queries.
 
 Authors: Bob Zhang, Jiwon Shin, Yun-Chung Liu (Murphy), Afraa Noureen 
 """
