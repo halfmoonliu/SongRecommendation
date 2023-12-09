@@ -2,14 +2,21 @@
 
 # Using Voice Prompt for Song Recommendation
 
-This repository contains codes for **deploying a voice-triggered song recommendation application** (App). Ｗhen using the App, the user can **talk** about their feelings or conditions at moment, such as "I am waiting for my plane" or " I am feeing down today", and a song will be recommended and played on spotify. The user can also use a **pull-down menu get a recommended song played based on their mood** (e.g. happy, sad, chill...etc).
+## Key Objectives of Project 
 
-Below is a **walkthrough** of the App.
+This repository is dedicated to the development of a **voice-triggered song recommendation application** (App). Our primary aim with this project is to empower users to effortlessly convey their current emotions or situations using **voice** commands, such as "I am waiting for my plane" or "I am feeling down today." Subsequently, the App will intelligently recommend and play a suitable song from Spotify that aligns with the user's mood. Furthermore, users have the option to choose a specific mood from a predefined set of six moods, including happy, sad, energetic, calm, anxious, and chill, via a **user-friendly pull-down menu**.
+
+A crucial aspect of this project involves leveraging a cloud-based environment, specifically **Azure Databricks**, to deploy our functional web microservice. This approach ensures that our service can operate seamlessly, regardless of the number of concurrent users, and guarantees a high level of reliability. To enhance song recommendations, we have integrated the **OpenAI API**, enabling us to curate a list of recommended songs based on users' voice inputs.
+
+In order to provide users with a diverse selection of songs for each mood category, we have meticulously generated a song dataset. This dataset encompasses six distinct sentiment categories: Happy, Sad, Energetic, Calm, Anxious, and Chill. Each sentiment category contains a curated list of 50 songs, complete with song titles, artist names, and mood labels. To ensure efficient storage and reliability, we initially created a CSV file and then stored it in a **Delta Lake** table within Databricks. This storage approach not only guarantees high performance but also offers scalability and flexibility to accommodate future needs.
+
+The following sections provide a detailed **walkthrough** of the App's functionality and usage.
+
+## Demo Video Link 
 
 
 
-
-Project structural diagram:
+## Project Structural Diagram
 ![Final-26](https://github.com/halfmoonliu/SongRecommendation/assets/141781876/8546444e-f752-4a4f-95f5-9b3b9fe69561)
 
 
@@ -21,7 +28,7 @@ Files in the repo:
   <br>a. _main.py_: the main function for the
   <br>b. _./libraries_:
       <br>i.   _speech2text.py_: **tranforms user's input** voice into **text**. 
-      <br>ii.  _GPR_prompt.py_: uses transfomed user input to **prompt chat GPT** and **returns song recommendations received**.
+      <br>ii.  _GPT_prompt.py_: uses transfomed user input to **prompt chat GPT** and **returns song recommendations received**.
       <br>iii. _parser.py_: output **one song name** and the corresponding **artist name** by parsing chat GPT's response.
       <br>iv.  _spotifyFunc.py_: takes a **song name** and an **artist name** and feed them to **Spotify API** and output **spotify soundtrack playing URL**.
       <br>v.  _songDB.py_: contains functions for **building a song database**.
