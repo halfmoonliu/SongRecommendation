@@ -19,7 +19,8 @@ from libraries._02_gpt_prompt import get_resp_gpt
 from libraries._03_spotify_functionality import get_token, search_for_track
 from libraries._04_query import query_song
 from libraries._05_parser import parse_song
-from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI, OPENAI_API_KEY
+from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET
+from config import SPOTIPY_REDIRECT_URI, OPENAI_API_KEY
 
 # Configure Loguru logger
 log_format = (
@@ -128,7 +129,7 @@ if option_choice == "Tell us how you feel!":
                     unsafe_allow_html=True,
                 )
             else:
-                logger.warning("Song not found on Spotify. Fallback to DB for Option 1.")
+                logger.warning("Song not found. Fallback to DB for Option 1.")
                 song_name_db, artist_name_db = query_song(song_recommendation)
                 spotify_url_db = search_for_track(token, artist_name_db, song_name_db)
 
