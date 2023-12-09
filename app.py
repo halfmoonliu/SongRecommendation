@@ -1,11 +1,10 @@
 """
 App Script
 
-This script defines our Streamlit app, 'JAMB-O', a mood-based music recommendation app. 
-It allows users to either record their voice to generate a song recommendation using 
-GPT-3 or choose a mood from a dropdown to get a song recommendation based on their 
-mood. The script integrates with the Spotify API for music playback and uses various 
-modules for speech-to-text, natural language processing, and database queries.
+This script defines our Streamlit app, 'JAMB-O', a mood-based music recommendation app. It allows users to 
+either record their voice to generate a song recommendation using GPT-3 or choose a mood from a dropdown 
+to get a song recommendation based on their mood. The script integrates with the Spotify API for music 
+playback and uses various modules for speech-to-text, natural language processing, and database queries.
 
 Authors: Bob Zhang, Jiwon Shin, Yun-Chung Liu (Murphy), Afraa Noureen 
 """
@@ -20,27 +19,19 @@ from libraries._02_gpt_prompt import get_resp_gpt
 from libraries._03_spotify_functionality import get_token, search_for_track
 from libraries._04_query import query_song
 from libraries._05_parser import parse_song
-from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI, OPENAI_API_KEY, AZURE_SPEECH_SUBSCRIPTION_KEYENV, AZURE_SPEECH_REGIONENV
 
 # Configure Loguru logger
-log_format = (
-    "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | "
-    "<level>{level: <8}</level> | "
-    "<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - "
-    "<level>{message}</level>"
-)
+log_format = "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
 logger.add("logging.md", format=log_format, level="INFO")
 
 # Load environment variables from .env file
 load_dotenv()
 
 # Load Spotify API credentials from environment variables
-SPOTIPY_CLIENT_ID = SPOTIPY_CLIENT_ID
-SPOTIPY_CLIENT_SECRET = SPOTIPY_CLIENT_SECRET
-SPOTIPY_REDIRECT_URI = SPOTIPY_REDIRECT_URI
-OPENAI_API_KEY = OPENAI_API_KEY
-AZURE_SPEECH_SUBSCRIPTION_KEY = AZURE_SPEECH_SUBSCRIPTION_KEYENV
-AZURE_SPEECH_REGION = AZURE_SPEECH_REGIONENV
+SPOTIPY_CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
+SPOTIPY_CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
+SPOTIPY_REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Authenticate with Spotify API
 sp = Spotify(
@@ -103,7 +94,9 @@ option_choice = st.radio(
 if option_choice == "Tell us how you feel!":
     logger.info("Option chosen: Tell us how you feel.")
     st.subheader("Tell us how you feel today, and we'll give you a song! 🎵")
-    if st.button("🎙️ Record Voice", key="record-voice", help="Click to record your voice"):
+    if st.button(
+        "🎙️ Record Voice", key="record-voice", help="Click to record your voice"
+    ):
         logger.info("Recording voice.")
         with st.spinner("Recording..."):
             audio_data = recordingVoice()
@@ -122,24 +115,18 @@ if option_choice == "Tell us how you feel!":
             if spotify_url_gpt:
                 logger.info("Spotify track found for GPT recommendation.")
                 st.markdown(
-                    f'<iframe src="https://open.spotify.com/embed/track/'
-                    f'{spotify_url_gpt.split("/")[-1]}" width="300" height="80" '
-                    f'frameborder="0" allowtransparency="true" allow="encrypted-media">'
-                    '</iframe>',
+                    f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_gpt.split("/")[-1]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
                     unsafe_allow_html=True,
                 )
             else:
-                logger.warning("Spotify track not found. Fallback to DB for Option 1.")
+                logger.warning("Song not found on Spotify. Fallback to DB for Option 1.")
                 song_name_db, artist_name_db = query_song(song_recommendation)
                 spotify_url_db = search_for_track(token, artist_name_db, song_name_db)
 
                 if spotify_url_db:
                     logger.info("Spotify track found in the database for Option 1.")
                     st.markdown(
-                        f'<iframe src="https://open.spotify.com/embed/track/'
-                        f'{spotify_url_db.split("/")[-1]}" width="300" height="80" '
-                        f'frameborder="0" allowtransparency="true" '
-                        f'allow="encrypted-media"></iframe>',
+                        f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_db.split("/")[-1]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
                         unsafe_allow_html=True,
                     )
                 else:
@@ -165,10 +152,7 @@ elif option_choice == "Choose your mood!":
         if spotify_url_mood:
             logger.info("Spotify track found for mood.")
             st.markdown(
-                f'<iframe src="https://open.spotify.com/embed/track/'
-                f'{spotify_url_mood.split("/")[-1]}" width="300" height="80" '
-                f'frameborder="0" allowtransparency="true" allow="encrypted-media">'
-                '</iframe>',
+                f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_mood.split("/")[-1]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
                 unsafe_allow_html=True,
             )
         else:
