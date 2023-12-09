@@ -6,6 +6,7 @@ COPY requirements.txt .
 RUN apt-get update && apt-get install -y portaudio19-dev
 # Install Python packages
 RUN pip install -r requirements.txt
+EXPOSE 5000
 
 # Use a distroless image
 FROM gcr.io/distroless/python3
