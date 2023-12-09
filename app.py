@@ -9,7 +9,6 @@ modules for speech-to-text, natural language processing, and database queries.
 
 Authors: Bob Zhang, Jiwon Shin, Yun-Chung Liu (Murphy), Afraa Noureen 
 """
-import os
 import streamlit as st
 from dotenv import load_dotenv
 from spotipy import Spotify
@@ -20,7 +19,7 @@ from libraries._02_gpt_prompt import get_resp_gpt
 from libraries._03_spotify_functionality import get_token, search_for_track
 from libraries._04_query import query_song
 from libraries._05_parser import parse_song
-from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI, OPENAI_API_KEY, AZURE_SPEECH_SUBSCRIPTION_KEYENV, AZURE_SPEECH_REGIONENV
+from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI, OPENAI_API_KEY
 
 # Configure Loguru logger
 log_format = (
@@ -122,7 +121,10 @@ if option_choice == "Tell us how you feel!":
             if spotify_url_gpt:
                 logger.info("Spotify track found for GPT recommendation.")
                 st.markdown(
-                    f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_gpt.split("/")[-1]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                    f'<iframe src="https://open.spotify.com/embed/track/'
+                    f'{spotify_url_gpt.split("/")[-1]}" width="300" height="80" '
+                    f'frameborder="0" allowtransparency="true" allow="encrypted-media">'
+                    f'</iframe>',
                     unsafe_allow_html=True,
                 )
             else:
@@ -133,7 +135,10 @@ if option_choice == "Tell us how you feel!":
                 if spotify_url_db:
                     logger.info("Spotify track found in the database for Option 1.")
                     st.markdown(
-                        f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_db.split("/")[-1]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                        f'<iframe src="https://open.spotify.com/embed/track/'
+                        f'{spotify_url_db.split("/")[-1]}" width="300" height="80" '
+                        f'frameborder="0" allowtransparency="true" allow="encrypted-media">
+                        f'</iframe>',
                         unsafe_allow_html=True,
                     )
                 else:
@@ -159,7 +164,10 @@ elif option_choice == "Choose your mood!":
         if spotify_url_mood:
             logger.info("Spotify track found for mood.")
             st.markdown(
-                f'<iframe src="https://open.spotify.com/embed/track/{spotify_url_mood.split("/")[-1]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                f'<iframe src="https://open.spotify.com/embed/track/'
+                f'{spotify_url_mood.split("/")[-1]}" width="300" height="80" '
+                f'frameborder="0" allowtransparency="true" allow="encrypted-media">'
+                f'</iframe>',
                 unsafe_allow_html=True,
             )
         else:
