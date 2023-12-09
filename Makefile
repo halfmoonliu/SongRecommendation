@@ -1,19 +1,6 @@
 install:
-<<<<<<< HEAD
-<<<<<<< HEAD
-	brew install portaudio
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
-||||||| merged common ancestors
-	pip install --upgrade pip &&\
-		pip install -r requirements.txt
-=======
-||||||| merged common ancestors
-=======
 	sudo apt-get install -y portaudio19-dev
->>>>>>> 94cc4eec85b64c97a190f5839f0e394dfa0ce0f5
 	pip install --upgrade pip && pip install -r requirements.txt
->>>>>>> abc71dbbf804cf99d2a7d987a01155e36d2919d9
 
 test:
 	python -m pytest -vv --cov=main --cov=mylib test_*.py
