@@ -10,7 +10,8 @@ Below is a **walkthrough** of the App.
 
 
 Project structural diagram:
-![Final-diagram-26](https://github.com/halfmoonliu/SongRecommendation/assets/141781876/315949b1-e7b4-4e6d-9445-054efbdbf5aa)
+![Final-26](https://github.com/halfmoonliu/SongRecommendation/assets/141781876/8546444e-f752-4a4f-95f5-9b3b9fe69561)
+
 
 
 
