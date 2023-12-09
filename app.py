@@ -138,7 +138,7 @@ if option_choice == "Tell us how you feel!":
                     st.markdown(
                         f'<iframe src="https://open.spotify.com/embed/track/'
                         f'{spotify_url_db.split("/")[-1]}" width="300" height="80" '
-                        f'frameborder="0" allowtransparency="true" allow="encrypted-media">
+                        f'frameborder="0" allowtransparency="true" allow="encrypted-media">'
                         f'</iframe>',
                         unsafe_allow_html=True,
                     )
