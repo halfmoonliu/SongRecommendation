@@ -21,7 +21,8 @@ Files in the repo:
       <br>ii.  _GPR_prompt.py_: uses transfomed user input to **prompt chat GPT** and **returns song recommendations received**.
       <br>iii. _parser.py_: output **one song name** and the corresponding **artist name** by parsing chat GPT's response.
       <br>iv.  _spotifyFunc.py_: takes a **song name** and an **artist name** and feed them to **Spotify API** and output **spotify soundtrack playing URL**.
-      <br>v.  _songDB.py_: contains functions for **building a song database** and **querying song names and artist names** based on **user input mood**.
+      <br>v.  _songDB.py_: contains functions for **building a song database**.
+      <br>vi. _query.py__: **querying song names and artist names** based on **user input mood**.
 
 3. **Github actions setup for continuous integration**
       <br>c. _.github/workflows/main.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
@@ -33,4 +34,4 @@ Files in the repo:
 5. **Description of the project**
    <br>f. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
 
-This is a collective project with the following contibutors: @afraa-n (Afraa Noureen), @BobZhang26 (Bob Zhang), @jiwonny29 (Jiwon Shin), and @halfmoonliu (Yun-Chung (Murphy) Liu).
+This is a collective project with the following contibutors: Afraa Noureen(@afraa-n), Bob Zhang(@BobZhang26), Jiwon Shin(@jiwonny29),Yun-Chung (Murphy) Liu (@halfmoonliu).
