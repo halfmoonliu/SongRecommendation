@@ -10,6 +10,8 @@ Below is a **walkthrough** of the App.
 
 
 Project structural diagram:
+![Final-diagram-26](https://github.com/halfmoonliu/SongRecommendation/assets/141781876/315949b1-e7b4-4e6d-9445-054efbdbf5aa)
+
 
 
 Files in the repo:
