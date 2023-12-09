@@ -4,49 +4,79 @@ Voice Transcription Script
 This script provides functions for recording audio from a microphone, loading the audio data,
 and transcribing the speech using a pre-trained Whisper ASR (Automatic Speech Recognition) model.
 """
-# _01_speech_to_text.py
-
-import sounddevice as sd
+import os
+import pyaudio
+import whisper
+from scipy.io.wavfile import read
 import numpy as np
 import wave
-import azure.cognitiveservices.speech as speechsdk
-import whisper
-import os
-from config import AZURE_SPEECH_SUBSCRIPTION_KEYENV, AZURE_SPEECH_REGIONENV
 
 def recordingVoice(save_path="data/output.wav"):
+    """
+    Records audio from the microphone for a specified duration and saves it to a WAV file.
+
+    Args:
+    save_path (str): The path to save the recorded audio file.
+
+    Returns:
+    bytes: The recorded audio data as bytes.
+    """
+    # Create the "data" folder if it doesn't exist
     os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
-    duration = 10  # Set the duration of recording in seconds
+    # Parameters
+    FORMAT = pyaudio.paInt16
+    CHANNELS = 1
+    RATE = 44100
+    CHUNK = 1024
+    RECORD_SECONDS = 10
 
-    # Create a speech configuration object using Azure Speech SDK credentials
-    speech_config = speechsdk.SpeechConfig(
-        subscription=AZURE_SPEECH_SUBSCRIPTION_KEYENV,
-        region=AZURE_SPEECH_REGIONENV
+    # Initialize pyaudio
+    audio = pyaudio.PyAudio()
+
+    # Open stream
+    stream = audio.open(
+        format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK
     )
 
-    audio_config = speechsdk.audio.AudioConfig(use_default_microphone=True)
+    print("Recording...")
 
-    # Create a speech recognizer with Azure Speech SDK
-    speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
+    frames = []
 
-    # Start speech recognition
-    result = speech_recognizer.recognize_once()
+    # Record for 10 seconds
+    for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
+        data = stream.read(CHUNK)
+        frames.append(data)
 
-    if result.reason == speechsdk.ResultReason.RecognizedSpeech:
-        audio_data = np.frombuffer(result.audio_data, dtype=np.int16)
-        # Save the recorded audio to a WAV file
-        with wave.open(save_path, "wb") as wf:
-            wf.setnchannels(1)
-            wf.setsampwidth(2)
-            wf.setframerate(44100)
-            wf.writeframes(audio_data.tobytes())
+    print("Finished recording.")
 
-        return audio_data.tobytes()
+    # Stop and close the stream
+    stream.stop_stream()
+    stream.close()
+    audio.terminate()
 
-    else:
-        print("Speech recognition failed:", result.reason)
-        return b""
+    # Save the recorded audio to a WAV file
+    with wave.open(save_path, "wb") as wf:
+        wf.setnchannels(CHANNELS)
+        wf.setsampwidth(audio.get_sample_size(FORMAT))
+        wf.setframerate(RATE)
+        wf.writeframes(b"".join(frames))
+
+    return b"".join(frames)  # Return the audio data as bytes
+
+
+
+def load_audio(audio_data):
+    """
+    Converts audio data from bytes to a NumPy array.
+
+    Args:
+    audio_data (bytes): The audio data in bytes.
+
+    Returns:
+    numpy.ndarray: The audio data as a NumPy array.
+    """
+    return np.frombuffer(audio_data, dtype=np.int16).astype(np.float32) / 32767.0
 
 
 def transcribe_audio(audio_data):
@@ -69,4 +99,3 @@ def transcribe_audio(audio_data):
     result = model.transcribe(audio)
 
     return result["text"]
-
