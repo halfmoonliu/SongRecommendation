@@ -20,6 +20,7 @@ from libraries._02_gpt_prompt import get_resp_gpt
 from libraries._03_spotify_functionality import get_token, search_for_track
 from libraries._04_query import query_song
 from libraries._05_parser import parse_song
+from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI, OPENAI_API_KEY, AZURE_SPEECH_SUBSCRIPTION_KEYENV, AZURE_SPEECH_REGIONENV
 
 # Configure Loguru logger
 log_format = (
@@ -34,10 +35,12 @@ logger.add("logging.md", format=log_format, level="INFO")
 load_dotenv()
 
 # Load Spotify API credentials from environment variables
-SPOTIPY_CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
-SPOTIPY_CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
-SPOTIPY_REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+SPOTIPY_CLIENT_ID = SPOTIPY_CLIENT_ID
+SPOTIPY_CLIENT_SECRET = SPOTIPY_CLIENT_SECRET
+SPOTIPY_REDIRECT_URI = SPOTIPY_REDIRECT_URI
+OPENAI_API_KEY = OPENAI_API_KEY
+AZURE_SPEECH_SUBSCRIPTION_KEY = AZURE_SPEECH_SUBSCRIPTION_KEYENV
+AZURE_SPEECH_REGION = AZURE_SPEECH_REGIONENV
 
 # Authenticate with Spotify API
 sp = Spotify(
@@ -100,9 +103,7 @@ option_choice = st.radio(
 if option_choice == "Tell us how you feel!":
     logger.info("Option chosen: Tell us how you feel.")
     st.subheader("Tell us how you feel today, and we'll give you a song! 🎵")
-    if st.button(
-        "🎙️ Record Voice", key="record-voice", help="Click to record your voice"
-    ):
+    if st.button("🎙️ Record Voice", key="record-voice", help="Click to record your voice"):
         logger.info("Recording voice.")
         with st.spinner("Recording..."):
             audio_data = recordingVoice()

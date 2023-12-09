@@ -24,3 +24,5 @@ openai
 python-dotenv
 requests
 loguru
+azure-cognitiveservices-speech
+sounddevice

@@ -5,12 +5,15 @@ This script utilizes the OpenAI GPT-3 (text-davinci-003) engine to generate resp
 specifically for requesting music recommendations. It defines a function 'get_resp_gpt' that takes a user's
 mood as input, formulates a prompt, and retrieves a GPT-3 generated response with recommended songs.
 """
+
+
 import openai
 import os
 from dotenv import load_dotenv
+from config import OPENAI_API_KEY
 
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = OPENAI_API_KEY
 
 
 def get_resp_gpt(user_input, api_key):
