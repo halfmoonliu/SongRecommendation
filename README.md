@@ -28,7 +28,7 @@ A fundamental aspect of this project involves harnessing a cloud-based environme
   
 - ``Infrastructure as Code (IaC)``: We employ Infrastructure as Code (IaC) principles to define, manage, and provision our project's infrastructure, promoting consistency and efficiency throughout its lifecycle.
 
-## Data Engineering Pipeline 
+## Creating a Database with Azure Databricks
 ![image](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/24042efa-b022-4c07-bade-d776d15aa2cc)
 ```bash
 # Load environment variables for authentication
