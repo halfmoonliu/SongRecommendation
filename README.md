@@ -2,9 +2,6 @@
 
 # JAMBO MoodTunes: Mood-Based Song Recommendations
 
-## The App
-![image](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/7e90bc9f-5aa7-4f11-b0d9-ca9e4b8f61f1)
-
 ## Objectives
 
 This repository is dedicated to crafting a personalized text-based song recommendation application that offers adaptable user interactions. Our app allows users to express their emotions freely, whether they are conveying sentiments such as "I am waiting for my plane" or expressing feelings of being "down today."
@@ -150,6 +147,9 @@ A **load test of 10,000 requests** was conducted using **Locust**. From the diag
 
 5. **Description of the project**
    <br>f. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
+
+## The App
+![image](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/7e90bc9f-5aa7-4f11-b0d9-ca9e4b8f61f1)
 
 ## Contributors 
 - [Afraa Noureen](https://github.com/afraa-n)
