@@ -9,18 +9,17 @@ modules for speech-to-text, natural language processing, and database queries.
 
 Authors: Bob Zhang, Jiwon Shin, Yun-Chung Liu (Murphy), Afraa Noureen 
 """
+import os
 import streamlit as st
-from dotenv import load_dotenv
 from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 from loguru import logger
-from libraries._01_speech_to_text import recordingVoice, transcribe_audio
 from libraries._02_gpt_prompt import get_resp_gpt
 from libraries._03_spotify_functionality import get_token, search_for_track
 from libraries._04_query import query_song
 from libraries._05_parser import parse_song
-from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET
-from config import SPOTIPY_REDIRECT_URI, OPENAI_API_KEY
+# from config import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET
+# from config import SPOTIPY_REDIRECT_URI, OPENAI_API_KEY
 
 # Configure Loguru logger
 log_format = (
@@ -31,14 +30,11 @@ log_format = (
 )
 logger.add("logging.md", format=log_format, level="INFO")
 
-# Load environment variables from .env file
-load_dotenv()
-
 # Load Spotify API credentials from environment variables
-SPOTIPY_CLIENT_ID = SPOTIPY_CLIENT_ID
-SPOTIPY_CLIENT_SECRET = SPOTIPY_CLIENT_SECRET
-SPOTIPY_REDIRECT_URI = SPOTIPY_REDIRECT_URI
-OPENAI_API_KEY = OPENAI_API_KEY
+SPOTIPY_CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
+SPOTIPY_CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
+SPOTIPY_REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Authenticate with Spotify API
 sp = Spotify(
@@ -98,20 +94,21 @@ option_choice = st.radio(
     "Take your pick:", ["Tell us how you feel!", "Choose your mood!"]
 )
 
+# Replace the voice recording section with a text input box
 if option_choice == "Tell us how you feel!":
     logger.info("Option chosen: Tell us how you feel.")
     st.subheader("Tell us how you feel today, and we'll give you a song! 🎵")
-    if st.button(
-        "🎙️ Record Voice", key="record-voice", help="Click to record your voice"
-    ):
-        logger.info("Recording voice.")
-        with st.spinner("Recording..."):
-            audio_data = recordingVoice()
-
-        with st.spinner("Awesome! Finding your mood song 😉"):
-            transcription = transcribe_audio(audio_data)
-            song_recommendation = get_resp_gpt(transcription, OPENAI_API_KEY)
-            song_artist_gpt = parse_song(song_recommendation)
+    
+    # Add a text input box for the user to enter their mood
+    user_mood_input = st.text_input("Enter your mood here:")
+    
+    # Check if the user entered a mood and clicked the button
+    if user_mood_input and st.button("Get Song Recommendation", key="get-song-text"):
+        logger.info(f"User entered mood: {user_mood_input}")
+        
+        # Call the GPT prompt function with the user's text input
+        song_recommendation = get_resp_gpt(user_mood_input, OPENAI_API_KEY)
+        song_artist_gpt = parse_song(song_recommendation)
 
         if song_artist_gpt[0] and song_artist_gpt[1]:
             logger.info("Song recommendation successfully parsed.")
@@ -174,3 +171,4 @@ elif option_choice == "Choose your mood!":
         else:
             logger.warning("Song not found on Spotify.")
             st.warning("Song not found on Spotify.")
+
