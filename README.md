@@ -1,23 +1,18 @@
+
 [![Continuous Intigrationn Quality Check](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml/badge.svg)](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml)
 
-# Using User Prompt for Song Recommendation
+# JAMBO MoodTunes: Personalized Mood-Based Song Recommendations
 
 ## Objectives
 
-This repository is dedicated to the development of a **voice-triggered song recommendation application** (App). Our primary aim with this project is to empower users to effortlessly convey their current emotions or situations using **voice** commands, such as "I am waiting for my plane" or "I am feeling down today." Subsequently, the App will intelligently recommend and play a suitable song from Spotify that aligns with the user's mood. Furthermore, users have the option to choose a specific mood from a predefined set of six moods, including happy, sad, energetic, calm, anxious, and chill, via a **user-friendly pull-down menu** (Demo Video).
+This repository is dedicated to crafting a personalized text-based song recommendation application that offers adaptable user interactions. Our app allows users to express their emotions freely, whether they are conveying sentiments such as "I am waiting for my plane" or expressing feelings of being "down today."
 
-A crucial aspect of this project involves leveraging a cloud-based environment, specifically **Azure Databricks**, to deploy our functional web microservice. This approach ensures that our service can operate seamlessly, regardless of the number of concurrent users, and guarantees a high level of reliability. To enhance song recommendations, we have integrated the **OpenAI API**, enabling us to curate a list of recommended songs based on users' voice inputs.
+In response, our application employs intelligent algorithms to select and play a song from Spotify that perfectly matches the user's emotional state. Users can choose between two user-friendly options: they can either input text or simply select one of six predefined emotions (happy, sad, energetic, calm, anxious, and chill) from an intuitive pull-down menu (as demonstrated in the video).
 
-In order to provide users with a diverse selection of songs for each mood category, we have meticulously generated a song dataset. This dataset encompasses six distinct sentiment categories: Happy, Sad, Energetic, Calm, Anxious, and Chill. Each sentiment category contains a curated list of 50 songs, complete with song titles, artist names, and mood labels. To ensure efficient storage and reliability, we initially created a CSV file and then stored it in a **Delta Lake** table within Databricks. This storage approach not only guarantees high performance but also offers scalability and flexibility to accommodate future needs.
-
-The following sections provide a detailed **walkthrough** of the App's functionality and usage.
-
+A fundamental aspect of this project involves harnessing a cloud-based environment, specifically **Azure App Services**, to deploy our robust web microservice. This approach guarantees seamless performance, even under heavy user loads, and ensures a high level of reliability.
 
 ## Project Structural Diagram
 ![Final-26](https://github.com/halfmoonliu/SongRecommendation/assets/141781876/f087bfcc-f0e2-4f93-815a-b0ce00bce2dd)
-
-
-
 
 ## Key Components
 
