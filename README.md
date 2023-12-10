@@ -1,4 +1,4 @@
-[![CI](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml/badge.svg)](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml)
+[![Continuous Intigrationn Quality Check](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml/badge.svg)](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml)
 
 # Using User Prompt for Song Recommendation
 
@@ -130,7 +130,7 @@ A **load test of 10,000 requests** was conducted using **Locust**. From the diag
 
 ## File Indices
 1. Main Functions associated libraries .
-  <br>a. _main.py_: the main function for the
+  <br>a. _app.py_: the main function hosting the song recommendation application.
   <br>b. _./libraries_:
       <br>i.   _01_speech_to_text.py: **tranforms user's input** voice into **text**. 
       <br>ii.  _02_gpt_prompt.py: uses transfomed user input to **prompt chat GPT** and **returns song recommendations received**.
