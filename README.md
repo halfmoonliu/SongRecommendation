@@ -20,7 +20,7 @@ The following sections provide a detailed **walkthrough** of the App's functiona
 
 ## Key Components
 
-- ``Microservice``: Our user-facing microservice, implemented in app.py, utilizes the Spotify API and OpenAI GPT-3 API. Auto-scaling is facilitated through Azure App Service for improved availability.
+- ``Microservice``: Our user-facing microservice, implemented in `app.py`, utilizes the Spotify API and OpenAI GPT-3 API. Auto-scaling is facilitated through Azure App Service for improved availability.
   
 - ``Data Engineering Pipeline``:  This pipeline is encapsulated in ``mylib/extract.py`` and ``mylib/transform_load.py``. It demonstrates the creation of music data files and their upload to Azure Databricks File System (DBFS) via Azure Databricks REST API. Additionally, we showcase Delta Lake, chosen for its ACID (Atomicity, Consistency, Isolation, Durability) transaction support, ensuring robust performance.
 
@@ -31,6 +31,9 @@ The following sections provide a detailed **walkthrough** of the App's functiona
 - ``Github Configurations``: Our GitHub settings and parameters optimize collaboration and version control for the project.
   
 - ``Infrastructure as Code (IaC)``: We employ Infrastructure as Code (IaC) principles to define, manage, and provision our project's infrastructure, promoting consistency and efficiency throughout its lifecycle.
+
+## Data Engineering Pipeline 
+
 
 ## YC Liu
 1. Main Functions associated libraries .
@@ -54,4 +57,7 @@ The following sections provide a detailed **walkthrough** of the App's functiona
    <br>f. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
 
 ## Contributors 
-This is a collective project with the following contibutors: Afraa Noureen(@afraa-n), Bob Zhang(@BobZhang26), Jiwon Shin(@jiwonny29),Yun-Chung (Murphy) Liu (@halfmoonliu).
+- [Afraa Noureen](https://github.com/afraa-n)
+- [Bob Zhang](https://github.com/BobZhang26)
+- [Jiwon Shin](https://github.com/jiwonny29)
+- [Yun-Chung (Murphy) Liu](https://github.com/halfmoonliu)
