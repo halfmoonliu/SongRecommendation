@@ -150,7 +150,7 @@ A **load test of 10,000 requests** was conducted using **Locust**. From the diag
    <br>f. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
 
 ## The App
-![image](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/7e90bc9f-5aa7-4f11-b0d9-ca9e4b8f61f1)
+![WhatsApp 이미지 2023-12-10, 15 44 24_83bc6e1c](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/c8193f27-1a42-42a7-8320-a316415791e3)
 
 ## Contributors 
 - [Afraa Noureen](https://github.com/afraa-n)
