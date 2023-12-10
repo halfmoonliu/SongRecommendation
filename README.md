@@ -49,7 +49,7 @@ def load(dataset="dbfs:/FileStore/Final/songs.csv"):
     # transform into a delta lakes table and store it 
     songs_df.write.format("delta").mode("overwrite").saveAsTable("songs_delta")
 ```
-we initially established a secure connection to the Databricks environment by leveraging environment variables for authentication, specifically the SERVER_HOSTNAME and ACCESS_TOKEN. This connection allowed us to seamlessly integrate our GitHub repository with the Databricks Workspace repository.
+We initially established a secure connection to the Databricks environment by leveraging environment variables for authentication, specifically the SERVER_HOSTNAME and ACCESS_TOKEN. This connection allowed us to seamlessly integrate our GitHub repository with the Databricks Workspace repository.
 
 Next, we initiated the data transformation process by converting the music_data.csv file into a Spark DataFrame. This DataFrame was then transformed into a Delta Lake Table, offering a structured and optimized storage format within the Databricks environment.
 
