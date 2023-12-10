@@ -123,6 +123,10 @@ A **load test of 10,000 requests** was conducted using **Locust**. From the diag
 
 <img width="1270" alt="LoadTest_ReponseTime" src="https://github.com/halfmoonliu/SongRecommendation/assets/46064664/dc53f286-ca43-4a6f-a9e4-db57815193fe">
 
+## App Deployment Result
+![image](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/7e90bc9f-5aa7-4f11-b0d9-ca9e4b8f61f1)
+
+
 ## File Indices
 1. Main Functions associated libraries .
   <br>a. _app.py_: the main function hosting the song recommendation application.
