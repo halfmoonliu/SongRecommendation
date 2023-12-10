@@ -1,5 +1,4 @@
-
-[![Continuous Intigrationn Quality Check](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml/badge.svg)](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml)
+[![Continuous Integration Quality Check](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml/badge.svg)](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml)
 
 # JAMBO MoodTunes: Mood-Based Song Recommendations
 
