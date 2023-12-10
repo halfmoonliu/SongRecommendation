@@ -3,10 +3,11 @@
 # JAMBO MoodTunes: Mood-Based Song Recommendations
 
 ## Objectives
+[Demo Video](https://youtu.be/nrdiuNMPhKc)
 
 This repository is dedicated to crafting a text-based song recommendation application that offers adaptable user interactions. Our app allows users to express their emotions freely, whether they are conveying sentiments such as "I am waiting for my plane" or expressing feelings of being "down today."
 
-In response, our application employs intelligent algorithms to select and play a song from Spotify that perfectly matches the user's emotional state. Users can choose between two user-friendly options: they can either input text or simply select one of six predefined emotions (happy, sad, energetic, calm, anxious, and chill) from an intuitive pull-down menu (as demonstrated in the video).
+In response, our application employs intelligent algorithms to select and play a song from Spotify that perfectly matches the user's emotional state. Users can choose between two user-friendly options: they can either input text or simply select one of six predefined emotions (happy, sad, energetic, calm, anxious, and chill) from an intuitive pull-down menu. 
 
 A fundamental aspect of this project involves harnessing a cloud-based environment, specifically **Azure App Services**, to deploy our robust web microservice. This approach guarantees seamless performance, even under heavy user loads, and ensures a high level of reliability.
 
