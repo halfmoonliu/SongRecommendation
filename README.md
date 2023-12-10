@@ -64,12 +64,12 @@ To ensure the continuous synchronization of our data, we implemented a dedicated
 1. Main Functions associated libraries .
   <br>a. _main.py_: the main function for the
   <br>b. _./libraries_:
-      <br>i.   _speech2text.py_: **tranforms user's input** voice into **text**. 
-      <br>ii.  _GPT_prompt.py_: uses transfomed user input to **prompt chat GPT** and **returns song recommendations received**.
-      <br>iii. _parser.py_: output **one song name** and the corresponding **artist name** by parsing chat GPT's response.
-      <br>iv.  _spotifyFunc.py_: takes a **song name** and an **artist name** and feed them to **Spotify API** and output **spotify soundtrack playing URL**.
-      <br>v.  _songDB.py_: contains functions for **building a song database**.
-      <br>vi. _query.py__: **querying song names and artist names** based on **user input mood**.
+      <br>i.   _01_speech_to_text.py: **tranforms user's input** voice into **text**. 
+      <br>ii.  _02_gpt_prompt.py: uses transfomed user input to **prompt chat GPT** and **returns song recommendations received**.
+      <br>iii.  _03_spotify_functionality.py: takes a **song name** and an **artist name** and feed them to **Spotify API** and output **spotify soundtrack playing URL**.
+      <br>iv. _04_query.py: **querying song names and artist names** based on **user input mood**.
+      <br>v. _05_parser.py: output **one song name** and the corresponding **artist name** by parsing chat GPT's response.
+      <br>vi.  _songDB.py_: contains functions for **building a song database**.
 
 3. **Github actions setup for continuous integration**
       <br>c. _.github/workflows/main.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
