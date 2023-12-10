@@ -1,7 +1,10 @@
 
 [![Continuous Intigrationn Quality Check](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml/badge.svg)](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml)
 
-# JAMBO MoodTunes: Personalized Mood-Based Song Recommendations
+# JAMBO MoodTunes: Mood-Based Song Recommendations
+
+## The App
+![image](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/7e90bc9f-5aa7-4f11-b0d9-ca9e4b8f61f1)
 
 ## Objectives
 
@@ -123,8 +126,9 @@ A **load test of 10,000 requests** was conducted using **Locust**. From the diag
 
 <img width="1270" alt="LoadTest_ReponseTime" src="https://github.com/halfmoonliu/SongRecommendation/assets/46064664/dc53f286-ca43-4a6f-a9e4-db57815193fe">
 
-## App Deployment Result
-![image](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/7e90bc9f-5aa7-4f11-b0d9-ca9e4b8f61f1)
+### Logging
+**loguru** was used for logging to report app execution status for maintenance and debugging.
+<img width="734" alt="Logging" src="https://github.com/halfmoonliu/SongRecommendation/assets/46064664/47dfbb41-a49d-496d-bc9f-ac7947d1c2b6">
 
 
 ## File Indices
