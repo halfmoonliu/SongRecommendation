@@ -17,8 +17,6 @@ jobs:
           echo "SERVER_HOSTNAME=${{ secrets.SERVER_HOSTNAME }}" >> $GITHUB_ENV
           echo "JOB_ID=${{ secrets.JOB_ID }}" >> $GITHUB_ENV
           echo "ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}" >> $GITHUB_ENV
-      - name: Install build dependencies
-        run: sudo apt-get install -y portaudio19-dev
       - name: install packages
         run: make install
       - name: lint
