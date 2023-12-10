@@ -1,3 +1,5 @@
+[![CI](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml/badge.svg)](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml)
+
 # Using User Prompt for Song Recommendation
 
 ## Objectives
