@@ -104,7 +104,8 @@ docker push songregistry.azurecr.io/myapp
 
 
 
-The subsequent phase involves pushing this constructed image to the **Azure Container Registry**. ACR is a dedicated and private repository designed to host container images, seamlessly integrating with existing container development and deployment tools, while also offering a secure storage solution for our images. Once our image is securely housed in ACR, we can leverage Azure Web App for Containers for the deployment of your web application. This Azure service facilitates the deployment of your containerized application, complete with bespoke configurations, and provides the flexibility to scale as per our operational requirements. Azure efficiently retrieves the image from ACR and executes it within a container, ensuring that the runtime environment mirrors precisely what was outlined in the Dockerfile.
+The subsequent phase involves pushing this constructed image to the **Azure Container Registry**. ACR is a dedicated and private repository designed to host container images, seamlessly integrating with existing container development and deployment tools, while also offering a secure storage solution for our images. Once our image is securely housed in ACR, we can leverage Azure Web App for Containers for the deployment of your web application. This Azure service facilitates the deployment of your containerized application, complete with bespoke configurations, and provides the flexibility to scale as per our operational requirements. Azure efficiently retrieves the image from ACR and executes it within a container, ensuring that the runtime environment mirrors precisely what was outlined in the Dockerfile.  
+
 <img width="723" alt="Screenshot 2023-12-10 at 11 51 05" src="https://github.com/halfmoonliu/SongRecommendation/assets/141781876/2d5b56ac-ac00-4c80-bc8b-7db9778bc093">
 
 
