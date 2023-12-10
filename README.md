@@ -119,7 +119,16 @@ This streamlined process exemplifies the efficacy of combining Docker with Azure
 
 <img width="1003" alt="Screenshot 2023-12-10 at 11 52 53" src="https://github.com/halfmoonliu/SongRecommendation/assets/141781876/e58702a4-aa59-44dd-a8d4-67a308e257aa">
 
-## YC Liu
+
+## Load Test
+
+A **load test of 10,000 requests** was conducted using **Locust**. From the diagram below, we can see that as the number of requests increased, response time increased. At 10,000 requests, the **response time stablized at around 18 seconds**.
+
+<img width="1269" alt="LoadTest_Request" src="https://github.com/halfmoonliu/SongRecommendation/assets/46064664/eee2cddf-8d9d-43ea-a0f9-fcfb78ba12c7">
+
+<img width="1270" alt="LoadTest_ReponseTime" src="https://github.com/halfmoonliu/SongRecommendation/assets/46064664/dc53f286-ca43-4a6f-a9e4-db57815193fe">
+
+## File Indices
 1. Main Functions associated libraries .
   <br>a. _main.py_: the main function for the
   <br>b. _./libraries_:
