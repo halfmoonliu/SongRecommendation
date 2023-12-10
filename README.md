@@ -60,6 +60,8 @@ Next, we initiated the data transformation process by converting the music_data.
 
 To ensure the continuous synchronization of our data, we implemented a dedicated job responsible for constructing the Databricks ETL (Extract, Transform, Load) pipeline. This ensures that any changes made to the CSV data with every GitHub push are automatically reflected in our Databricks Delta Lake, guaranteeing up-to-date and accurate data for analysis.
 
+## Container Configuration
+
 ## YC Liu
 1. Main Functions associated libraries .
   <br>a. _main.py_: the main function for the
