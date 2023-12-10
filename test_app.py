@@ -28,7 +28,7 @@ class TestYourApp(unittest.TestCase):
             self.fail(f"Subprocess terminated with an error. "
                       f"Exit Code: {e.returncode}\nOutput:\n{e.output}")
         except subprocess.TimeoutExpired:
-            # If the subprocess times out, consider it a success unless encountered an error
+            # If the subprocess times out, consider it a success unless faced an error
             print("Mood-Based Song Recommendation App worked successfully!")
 
 if __name__ == "__main__":
