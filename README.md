@@ -33,7 +33,31 @@ The following sections provide a detailed **walkthrough** of the App's functiona
 - ``Infrastructure as Code (IaC)``: We employ Infrastructure as Code (IaC) principles to define, manage, and provision our project's infrastructure, promoting consistency and efficiency throughout its lifecycle.
 
 ## Data Engineering Pipeline 
+![image](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/24042efa-b022-4c07-bade-d776d15aa2cc)
+```bash
+# Load environment variables for authentication
+load_dotenv()
+server_h = os.getenv("SERVER_HOSTNAME")
+access_token = os.getenv("ACCESS_TOKEN")
+FILESTORE_PATH = "dbfs:/FileStore/Final"
 
+# Importing SparkSession from the pyspark.sql library
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import monotonically_increasing_id
+
+def load(dataset="dbfs:/FileStore/Final/songs.csv"):
+    spark = SparkSession.builder.appName("Read CSV").getOrCreate()
+    # load csv and transform it by inferring schema 
+    songs_df = spark.read.csv(dataset, header=True, inferSchema=True)
+
+    # transform into a delta lakes table and store it 
+    songs_df.write.format("delta").mode("overwrite").saveAsTable("songs_delta")
+```
+we initially established a secure connection to the Databricks environment by leveraging environment variables for authentication, specifically the SERVER_HOSTNAME and ACCESS_TOKEN. This connection allowed us to seamlessly integrate our GitHub repository with the Databricks Workspace repository.
+
+Next, we initiated the data transformation process by converting the music_data.csv file into a Spark DataFrame. This DataFrame was then transformed into a Delta Lake Table, offering a structured and optimized storage format within the Databricks environment.
+
+To ensure the continuous synchronization of our data, we implemented a dedicated job responsible for constructing the Databricks ETL (Extract, Transform, Load) pipeline. This ensures that any changes made to the CSV data with every GitHub push are automatically reflected in our Databricks Delta Lake, guaranteeing up-to-date and accurate data for analysis.
 
 ## YC Liu
 1. Main Functions associated libraries .
