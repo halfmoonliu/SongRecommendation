@@ -14,7 +14,8 @@ The following sections provide a detailed **walkthrough** of the App's functiona
 
 
 ## Project Structural Diagram
-![Final-26](https://github.com/halfmoonliu/SongRecommendation/assets/141781876/8546444e-f752-4a4f-95f5-9b3b9fe69561)
+![Final-26](https://github.com/halfmoonliu/SongRecommendation/assets/141781876/f087bfcc-f0e2-4f93-815a-b0ce00bce2dd)
+
 
 
 
