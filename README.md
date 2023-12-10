@@ -18,9 +18,21 @@ The following sections provide a detailed **walkthrough** of the App's functiona
 
 
 
+## Key Components
 
-Files in the repo:
+- ``Microservice``: Our user-facing microservice, implemented in app.py, utilizes the Spotify API and OpenAI GPT-3 API. Auto-scaling is facilitated through Azure App Service for improved availability.
+  
+- ``Data Engineering Pipeline``:  This pipeline is encapsulated in ``mylib/extract.py`` and ``mylib/transform_load.py``. It demonstrates the creation of music data files and their upload to Azure Databricks File System (DBFS) via Azure Databricks REST API. Additionally, we showcase Delta Lake, chosen for its ACID (Atomicity, Consistency, Isolation, Durability) transaction support, ensuring robust performance.
 
+- ``Container Configuration``: The Dockerfile provides clear instructions for creating a container that seamlessly fits the microservice's runtime environment.
+
+- ``Load Test``: By harnessing the power of the Locust library, we perform thorough local load testing on the microservice. This approach allows us to assess the system's performance under high load conditions, ensuring that we can confidently handle anticipated loads and traffic without experiencing slowdowns or crashes.
+  
+- ``Github Configurations``: Our GitHub settings and parameters optimize collaboration and version control for the project.
+  
+- ``Infrastructure as Code (IaC)``: We employ Infrastructure as Code (IaC) principles to define, manage, and provision our project's infrastructure, promoting consistency and efficiency throughout its lifecycle.
+
+## YC Liu
 1. Main Functions associated libraries .
   <br>a. _main.py_: the main function for the
   <br>b. _./libraries_:
@@ -41,4 +53,5 @@ Files in the repo:
 5. **Description of the project**
    <br>f. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
 
+## Contributors 
 This is a collective project with the following contibutors: Afraa Noureen(@afraa-n), Bob Zhang(@BobZhang26), Jiwon Shin(@jiwonny29),Yun-Chung (Murphy) Liu (@halfmoonliu).
