@@ -61,7 +61,7 @@ Next, we initiated the data transformation process by converting the music_data.
 To ensure the continuous synchronization of our data, we implemented a dedicated job responsible for constructing the Databricks ETL (Extract, Transform, Load) pipeline. This ensures that any changes made to the CSV data with every GitHub push are automatically reflected in our Databricks Delta Lake, guaranteeing up-to-date and accurate data for analysis.
 
 ## Container Configuration
-A Dockerfile within a GitHub repository plays a pivotal role in the deployment of a web application on Azure via the Azure Container Registry (ACR). Essentially, a Dockerfile is a scripted compilation of all the commands that would typically be issued in the command line to create a Docker image. Within the GitHub ecosystem, this file serves as a foundational script for constructing a Docker container, guaranteeing that the web application's environment is uniform, replicable, and subject to version control. [an image of docker file in github and explain some lines of code]
+A Dockerfile within a GitHub repository plays a pivotal role in the deployment of a web application on Azure via the Azure Container Registry (ACR). Essentially, a Dockerfile is a scripted compilation of all the commands that would typically be issued in the command line to create a Docker image. Within the GitHub ecosystem, this file serves as a foundational script for constructing a Docker container, guaranteeing that the web application's environment is uniform, replicable, and subject to version control.
 ```python
 # Use an official Python runtime as a parent image
 FROM python:3.9.7-slim
@@ -84,7 +84,17 @@ ENV NAME World
 # Run app.py when the container launches
 CMD ["streamlit", "run", "app.py", "--server.port", "8502"]
 ```
-The deployment journey of a web app on Azure using ACR commences with the Dockerfile situated in the GitHub repository. This critical file delineates the application's environment, specifying aspects such as the base operating system (e.g., Ubuntu or Alpine), necessary dependencies, environment variables, and the commands needed to run the app. After finalizing and committing the Dockerfile to your GitHub repository, Docker is employed to build an image from this file. This resultant image is a comprehensive package containing all the requisite components to run your application, neatly bundled into a portable, self-contained container. [add bas cli for building docker image and link it to the azure repo]
+The deployment journey of a web app on Azure using ACR commences with the Dockerfile situated in the GitHub repository. This critical file delineates the application's environment, specifying aspects such as the base operating system (e.g., Ubuntu or Alpine), necessary dependencies, environment variables, and the commands needed to run the app. After finalizing and committing the Dockerfile to your GitHub repository, Docker is employed to build an image from this file. This resultant image is a comprehensive package containing all the requisite components to run your application, neatly bundled into a portable, self-contained container. The following is a brief walkthrough from building docker image to push this image to Azure Container Registry. 
+
+- 1. login to Azure using the Azure CLI. This command will open a web page where you can enter your Azure credentials.
+```bash
+az login
+```
+- 2. create or use existing Azure Container Registry.
+```bash
+az acr create --resource-group data_engineering --name songregistry --sku Basic
+```
+
 
 The subsequent phase involves pushing this constructed image to the **Azure Container Registry**. ACR is a dedicated and private repository designed to host container images, seamlessly integrating with existing container development and deployment tools, while also offering a secure storage solution for our images. Once our image is securely housed in ACR, we can leverage Azure Web App for Containers for the deployment of your web application. This Azure service facilitates the deployment of your containerized application, complete with bespoke configurations, and provides the flexibility to scale as per our operational requirements. Azure efficiently retrieves the image from ACR and executes it within a container, ensuring that the runtime environment mirrors precisely what was outlined in the Dockerfile.[show the images in azure that assures successful deployment of docker container registry]
 <img width="723" alt="Screenshot 2023-12-10 at 11 51 05" src="https://github.com/halfmoonliu/SongRecommendation/assets/141781876/2d5b56ac-ac00-4c80-bc8b-7db9778bc093">
