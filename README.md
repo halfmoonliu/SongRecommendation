@@ -101,7 +101,8 @@ The subsequent phase involves pushing this constructed image to the **Azure Cont
 
 
 This streamlined process exemplifies the efficacy of combining Docker with Azure's capabilities, ensuring consistent application behavior across different stages of development, testing, and production, and capitalizing on Azure's scalability and security features, all while maintaining the agility and control afforded by containerization. Finally, the app was successfully deployed via **Azure App Service**. Detailed information of web app functionality on Azure can be found and diagnostic through logs. [image of web deployment and log]
-![Uploading Screenshot 2023-12-10 at 11.53.25.png…]()
+<img width="1314" alt="Screenshot 2023-12-10 at 11 53 25" src="https://github.com/halfmoonliu/SongRecommendation/assets/141781876/6ffe27bb-8ffc-48ca-8d0f-87492e0b68d0">
+
 <img width="1003" alt="Screenshot 2023-12-10 at 11 52 53" src="https://github.com/halfmoonliu/SongRecommendation/assets/141781876/e58702a4-aa59-44dd-a8d4-67a308e257aa">
 
 ## YC Liu
