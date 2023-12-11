@@ -4,7 +4,7 @@
 Reflecting on our final project experience, there's a lot to appreciate in our teamwork. Everyone brought their A-game, fostering constant communication, and we effectively leveraged our diverse skill sets. However, a key observation is that we might have benefited from starting with a less complicated project. Starting with something simpler would have given us a smoother start and allowed more time to grasp the tools we were working with. Another takeaway is the need for a better balance between this extensive project and our other commitments. So, we held a group feedback session, which proved to be beneficial for all team members. This session allowed us to discuss both positive aspects and areas for improvement, fostering a constructive dialogue. Each team member played a substantial role in the project, contributing extensively to its success.
 
 
-Yun-Chung Liu
+**Yun-Chung Liu**
 
 Strength
 1. Very dedicated to learning new concepts, invests his time into becoming good at it.
@@ -15,7 +15,7 @@ Potential things to improve
 1. Have more confidence in your skill level; your ability to swiftly grasp concepts is impressive.
 2. Consider acknowledging and taking due credit for the substantial contributions you make to the team's work.
 
-Bob Zhang
+**Bob Zhang**
 
 Strength
 1. Competent and independent problem solver - proficient in docker!
@@ -26,7 +26,7 @@ Potential things to improve
 1. Celebrate and share your achievements with the team, contributing to a positive team culture and reinforcing the value of collective effort.
 2. When things get tough, share the workload with the team for support.
 
-Jiwon Shin
+**Jiwon Shin**
 
 Strength
 1. Shows meticulous attention to detail, ensuring quality work is put out.
