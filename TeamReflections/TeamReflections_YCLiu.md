@@ -24,7 +24,7 @@ Strength
 
 Potential things to improve
 1. Share work with others if streesed.
-
+2. Be confident, you are so good!
 
 Jiwon Shin
 
