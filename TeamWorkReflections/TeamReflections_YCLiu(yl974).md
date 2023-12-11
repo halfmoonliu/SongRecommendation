@@ -1,6 +1,6 @@
-## Teamwork Reflections
-
-
+## Teamwork Reflections on The Voice Song Recommendation Application Project
+                                                                               Yun-Chung Liu
+                                                                               
 Looking back at the process of this team project, **the principles of teamwork** book **makes even more sense to us**. From the day the project team formed, we had **a very clear and elevated goal**: to **make an application worth putting in our portfolio**. At first, we did not know how we could achieve this goal. We did some research and leveraged **external support**, especially support **from experienced people**. Jiaxin shared with us some example projects. We brought our proposal to discuss with Scott. From this point on, our team culture started to emerge. I realized that **trust is gradually built** in this team. Each of the team members is **committed to deliver work of good quality** and is an **independent problem solver**, which makes this a problem-solving and creative team. As the project went on, we can feel **the commitment of each member** and how everyone is **struggling for better results**. Some team members went as far as staying up all night to fix an issue. At the end, we came up with an app that we are proud of, a song-recommendation app. This project enabled us to learn teamwork by actually doing teamwork.
 
 
