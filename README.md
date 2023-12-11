@@ -1,6 +1,6 @@
 [![Continuous Integration Quality Check](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml/badge.svg)](https://github.com/halfmoonliu/SongRecommendation/actions/workflows/cicd.yml)
 
-# JAMBO MoodTunes: Mood-Based Song Recommendations
+# [JAMBO MoodTunes: Mood-Based Song Recommendations](https://jambo-song-recommend.azurewebsites.net/)
 
 ## Objectives
 [Demo Video](https://youtu.be/nrdiuNMPhKc)
