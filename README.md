@@ -154,7 +154,4 @@ A **load test of 10,000 requests** was conducted using **Locust**. From the diag
 ![WhatsApp 이미지 2023-12-10, 15 44 24_83bc6e1c](https://github.com/halfmoonliu/SongRecommendation/assets/141780408/c8193f27-1a42-42a7-8320-a316415791e3)
 
 ## Contributors 
-- [Afraa Noureen](https://github.com/afraa-n)
 - [Bob Zhang](https://github.com/BobZhang26)
-- [Jiwon Shin](https://github.com/jiwonny29)
-- [Yun-Chung (Murphy) Liu](https://github.com/halfmoonliu)
